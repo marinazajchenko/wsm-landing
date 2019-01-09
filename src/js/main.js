@@ -52,7 +52,7 @@ $(function(){
     		$('.header__navigation a').on('click', function(e){
     			e.preventDefault();
     			var currentBlock = $(this).attr('href');
-    			var currentBlockOffset = $(currentBlock).offset().top;
+    			var currentBlockOffset = $(currentBlock).offset().top - 80 ;
     			$('html, body').animate({
     				scrollTop: currentBlockOffset 
     			}, 500);

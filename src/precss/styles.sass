@@ -510,5 +510,25 @@ img
 	height: 100%
 	justify-content: space-between
 
+.partners
+	&__title
+		margin-top: 7.2%
+		margin-bottom: 30px
+		position: relative
+		@extend %open__bold
+		color: $black
+		font-size: 32px
+		animation-duration: 2s
+		text-transform: uppercase
+		text-align: center
+		@media screen and (max-width: 576px)
+			font-size: 20px
+		@media screen and (max-width: 768px)
+			font-size: 26px
+	&__item
+		text-align: center
+	&__link
+		display: inline-block
+
 
 
