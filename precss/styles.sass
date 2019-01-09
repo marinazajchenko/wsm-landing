@@ -1,0 +1,514 @@
+$white: #fff
+$yellow: #f9c320
+$black: #000000
+$grey: #f3f3f3
+$red: #ea1c1c
+body
+	margin: 0
+	padding: 0
+.container
+	max-width: 1170px
+img
+	max-width: 100%
+%open__reg 
+	font-family: Open Sans, sans-serif
+	font-size: 14px
+%open__bold 
+	font-family: Open Sans, sans-serif
+	font-weight: bold
+	font-size: 20px
+.header
+	padding-top: 5%
+	padding-bottom: 10%
+	background-image: url("../img/header-bg.jpg")
+	background-size: cover
+	background-position: center
+	.container
+		position: static
+	.col-12.col-md-9
+		position: static
+	&__logo
+		&_img
+			display: inline-block
+		&_text
+			display: inline-block
+			color: $white
+	&__navigation
+		display: flex
+		justify-content: space-between
+		&_item
+			list-style-type: none
+			@media screen and (max-width: 1100px)
+				display: block
+				margin-top: 4%
+				text-align: center
+				border-bottom: 1px dotted $white
+		&_link
+			text-decoration: none
+			@extend %open__reg
+			color: $white
+			font-size: 16px
+			text-align: center
+			display: inline-block
+			box-sizing: border-box
+			cursor: pointer
+			&-main
+				width: 63px
+			&-about
+				width: 63px
+			&-features
+				width: 128px
+			&-start
+				width: 120px
+			&-price
+				width: 80px
+			&-contact
+				width: 150px
+			&:hover
+				text-decoration: none
+				color: $yellow
+			&:focus
+				text-decoration: none
+				color: $white
+				outline: 0
+				
+			&:active
+				outline: none
+				text-decoration: none
+			&:visited
+				outline: none
+				text-decoration: none
+				color: $white
+		&.nav__fixed
+			position: fixed
+			top: 0
+			left: 0
+			right: 0
+			padding: 2%
+			z-index: 200
+			background-color: rgba(0, 0, 0, 0.7)
+	&__title
+		color: $white
+		@extend %open__bold
+		font-size: 42px
+		margin-top: 20%
+		margin-bottom: 2%
+		animation-duration: 2s
+		@media screen and (max-width: 576px)
+			font-size: 22px
+		@media screen and (max-width: 768px)
+			font-size: 30px
+	&__description
+		margin-bottom: 2%
+		color: $white
+		@extend %open__reg
+		font-size: 18px
+		animation-duration: 2s
+		animation-delay: 2.2s
+		@media screen and (max-width: 576px)
+			font-size: 14px
+		@media screen and (max-width: 768px)
+			font-size: 16px
+	&__btn
+		display: block
+		margin: 0 auto
+		text-align: center
+		color: $black
+		width: 220px
+		height: 48px
+		box-sizing: border-box
+		text-decoration: none
+		border-radius: 5px
+		animation-delay: 8s
+		@extend %open__bold
+		font-size: 16px
+		line-height: 48px
+		background-color: $yellow
+		&:hover
+			text-decoration: none
+			color: $black
+		&:focus
+			text-decoration: none
+			color: $black
+		&:active
+			text-decoration: none
+			color: $black
+	&__hide-nav
+		position: absolute
+		top: 28px
+		right: 22px
+		width: 40px
+		height: 40px
+		cursor: pointer
+		display: none
+		@media screen and (max-width: 1100px)
+			display: block
+
+		&_line 
+			position: absolute
+			display: block
+			width: 80%
+			left: 10%
+			height: 3px
+			background-color: $white
+			border-radius: 5px
+			&-top
+				top: 8px
+			&-middle
+				top: 18px
+				opacity: 1
+			&-bottom
+				top: 28px
+	&__hide-nav.active
+		.header__hide-nav_line-top
+			top: 20px
+			transform: rotate(45deg)
+			transition: 0.4s
+		.header__hide-nav_line-middle
+			opacity: 0 
+		.header__hide-nav_line-bottom
+			top: 20px
+			transform: rotate(-45deg)
+			transition: 0.4s
+		.header__navigation
+			display: block
+			position: fixed
+			width: 300px
+			right: 0
+			z-index: 100
+
+
+.about
+	.container
+		position: relative
+	&__title
+		margin-top: 7.2%
+		position: relative
+		@extend %open__bold
+		color: $black
+		font-size: 32px
+		animation-duration: 2s 
+		@media screen and (max-width: 576px)
+			font-size: 20px
+		@media screen and (max-width: 768px)
+			font-size: 26px
+	&__description
+		position: relative
+		@extend %open__reg
+		font-size: 20px
+		margin-bottom: 12%
+		margin-top: 8%
+		animation-delay: 4s
+		animation-duration: 2s
+		@media screen and (max-width: 576px)
+			font-size: 16px
+			margin-bottom: 20%
+		@media screen and (max-width: 768px)
+			text-align: left
+		&_service, &_base
+			&::before
+				display: block
+				position: absolute
+				width: 140px
+				height: 140px
+				content: ""
+				top: -20px
+				left: -150px
+				background: url("../img/car__service.svg") no-repeat center 
+				@media screen and (max-width: 768px)
+					top: -25px
+					left: -133px
+					background-size: 65%
+				@media screen and (max-width: 576px)
+					top: -42px
+					left: -101px
+					background-size: 35%
+
+
+		&_base
+			&::before
+				background: url("../img/computer_1.svg") no-repeat center
+
+	
+
+.features
+	&__promo
+		position: absolute
+		top: 50%
+		left: 50%
+		transform: translate(-50%,-50%)
+		margin: auto
+		color: $white
+		font-size: 22px
+		@extend %open__bold
+		@media screen and (max-width: 768px)
+			font-size: 16px
+		@media screen and (max-width: 576px)
+			font-size: 14px
+		@media screen and (max-width: 280px)
+			font-size: 12px
+	
+	.js-slider
+
+		max-width: 1908px
+
+
+.start
+	background-color: $grey
+	/*.container
+		.row:nth-child(2)
+			animation-delay: 0.5s
+		.row:nth-child(3)
+			animation-delay: 0.5s
+		.row:nth-child(4)
+			animation-delay: 0.5s
+		.row:nth-child(5)
+			animation-delay: 0.5s */
+
+	&__title
+		animation-delay: 0.2s
+	&__description
+		margin-top: 3%
+		margin-bottom: 10%
+		@extend %open__reg
+		font-size: 22px
+		line-height: 28px
+		@media screen and (max-width: 576px)
+			font-size: 14px
+			margin-bottom: 15%
+		@media screen and (max-width: 768px)
+			font-size: 18px
+			margin-bottom: 15%
+		&::before
+			display: block
+			position: absolute
+			width: 140px
+			height: 140px
+			content: ""
+			top: -15px				
+			left: -150px
+			background: url("../img/icon__laptop.svg") no-repeat center
+			@media screen and (max-width: 576px)
+				left: -90px
+				background-size: 35%
+			@media screen and (max-width: 768px)
+				background-size: 65%
+				left: -127px
+		
+		&_choose
+			&::before
+				animation-delay: 4s
+				background: url("../img/icon__passed.svg") no-repeat center
+				@media screen and (max-width: 576px)
+					left: -90px
+					top: -28px
+		&_pay
+			&::before
+				animation-delay: 6s
+				background: url("../img/icon__cash.svg") no-repeat center
+				@media screen and (max-width: 280px)
+					left: -84px
+				@media screen and (max-width: 768px)
+					top: -30px
+				@media screen and (max-width: 1000px)
+					top: -45px
+		&_work
+			&::before
+				animation-delay: 8s
+				background: url("../img/icon__system.svg") no-repeat center
+				@media screen and (max-width: 280px)
+					left: -84px
+	&__registration
+		margin-top: 2%
+		margin-bottom: 8.82%
+		animation-delay: 10s
+
+
+.tariffs
+	padding-bottom: 12%
+	background-image: url("../img/price-bg.jpg") 
+	background-repeat: no-repeat
+	background-position: 70% 50%
+	background-size: cover
+	&__title
+		color: $white
+		padding-top: 4%
+		padding-bottom: 5%
+		font-size: 32px
+	&__block
+		margin-top: 55px
+		border: 2px solid $yellow
+		border-radius: 2px
+		padding: 0
+		background-color: rgba(255, 255, 255, 0.7);
+		display: flex
+		flex-direction: column
+		justify-content: space-between
+		align-items: center
+		@media screen and (max-width: 768px)
+			margin-top: 55px
+		@media screen and (max-width: 576px)
+			margin-top: 30px
+		&_name
+			color: rgba(220, 76, 76, 0.8)
+			text-decoration: underline
+			@extend %open__bold
+			font-size: 32px
+			width: 100%
+			padding: 20px 0
+			@media screen and (max-width: 576px)
+				font-size: 20px
+				padding-top: 30px
+	&__description
+		padding-top: 50px
+		padding-bottom: 41px
+		@extend %open__reg
+		width: 80%
+		white-space: normal
+		font-size: 20px
+		word-wrap: break-word
+		@media screen and (max-width: 576px)
+			padding-top: 30px
+			padding-bottom: 20px
+			font-size: 16px
+			text-align: left
+	&__period
+		@extend %open__reg
+		width: 80%
+		white-space: normal
+		font-size: 20px
+		word-wrap: break-word
+	&__price
+		@extend %open__bold
+		font-size: 32px
+		color: $white
+		background-color: rgba(220, 76, 76, 0.8)
+		width: 100%
+		padding: 20px 0
+		margin: 0
+		text-decoration: none
+		@media screen and (max-width: 576px)
+			font-size: 26px
+			padding-bottom: 26px
+		&:focus 
+			text-decoration: none
+			color: $white
+		&:hover
+			text-decoration: none
+			color: $white
+.contact
+	padding-bottom: 8%
+	&__title
+		margin-bottom: 4%
+	&__field_name, &__field_email
+		display: block
+		width: 100%
+		border: 2px solid grey
+		margin-top: 15px
+		@media screen and (max-width: 1000px)
+			margin-top: 5%
+		@media screen and (max-width: 768px)
+			margin-bottom: 5%
+		@media screen and (max-width: 576px)
+			margin-top: 4%
+			margin-bottom: 8%
+		&:focus, &:hover, &:active
+			border-color: $yellow
+			outline: 0
+	&__message
+		display: block
+		margin: 10% 0
+		width: 100%
+		border: 2px solid grey
+		&:focus, &:hover, &:active, &:visited
+			border-color: $yellow
+			outline: 0
+
+	&__submit
+		display: inline-block
+		width: 100%
+		height: 50px
+		background-color: transparent
+		cursor: pointer
+		@extend %open__reg
+		border: 2px solid grey
+		&:focus, &:hover, &:active, &:visited
+			border-color: $yellow
+			outline: 0
+	&_attention
+		color: $red
+		@extend %open__reg
+		font-size: 12px
+.footer
+	background-color: $black
+	padding: 1%
+	&__information
+		@extend %open__reg
+		color: $white
+		font-size: 12px
+		margin-top: 1%
+.header__navigation
+	@media screen and (max-width: 1100px)
+		display: none
+		position: absolute
+		right: 0
+		width: 100%
+		padding: 5%
+		background-color: $black
+		z-index: 10 
+.error__input 
+	border-color: $red;
+
+.overlay
+    height: 100%
+    width: 100%
+    background-color: rgba(0,0,0,0.7)
+    position: fixed
+    top: 0
+    left: 0
+    z-index: 900
+
+
+.modal
+    width: 300px
+    height: 200px
+    padding: 20px
+    text-align: center
+    background-color: $white
+    position: fixed
+    top: 100px
+    left: 50%
+    z-index: 1000
+    display: none
+    .btn_red
+    	width: 220px
+    	padding: 16px
+    	display: inline-block
+    	color: $white
+    	background-color: $red
+    	border-radius: 0
+    	font-family: Open Sans, sans-serif
+    	font-size: 14px
+    	font-weight: bold
+    	line-height: 1.1
+    	border: 0
+    	text-decoration: none
+    	text-transform: uppercase
+.modal__text
+	@extend %open__bold
+	font-size: 14px
+	margin-bottom: 35px
+	margin-top: 10px
+
+.open-modal
+    overflow-y: hidden
+.tariffs__condition
+	display: flex
+	flex-direction: column
+	align-items: center
+	width: 100%
+	height: 100%
+	justify-content: space-between
+
+
+
